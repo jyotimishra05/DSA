@@ -71,3 +71,20 @@ public class PhoneNumber {
 //     return list;
     
 // }
+
+
+
+
+//n be the length of the input string "23"
+//each digit has let say 4 corresponding letters
+//For each digit, we perform a recursive call, resulting in 4^n
+  //combinations being generated in the worst case.
+
+
+
+//   The space complexity mainly depends on the recursive calls 
+// and the space required to store the resulting combinations.  
+
+//In the worst case, there can be 4^n combination  each of length n
+
+// Therefore, the space complexity is (4^n)*n
