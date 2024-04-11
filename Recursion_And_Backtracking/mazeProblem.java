@@ -75,10 +75,10 @@ static void withPathRestrictions(String p,boolean maze[][], int r ,int c){
         return;
     }
     if(r<maze.length-1){
-        totalPath(p+'D', r+1, c);
+        withPathRestrictions(p+'D',maze, r+1, c);
     }
     if(c<maze[0].length-1){
-        totalPath(p+'R', r, c+1);
+        withPathRestrictions(p+'R',maze, r, c+1);
     }
 
 }
