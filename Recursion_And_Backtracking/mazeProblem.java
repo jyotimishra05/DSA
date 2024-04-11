@@ -44,6 +44,26 @@ static ArrayList<String>totalPaths(String s, int r,int c){
     return list;
 
 }
+static ArrayList<String>includeDiagonalPaths(String s, int r,int c){
+    if(r==1 && c==1){
+        ArrayList<String>res= new ArrayList<>();
+        res.add(s);
+        return res;
+    }
+    ArrayList<String>list = new ArrayList<>();
+      if(r>1){
+            list.addAll(includeDiagonalPaths(s+"D", r-1, c));
+          }
+      if(c>1){
+            list.addAll(includeDiagonalPaths(s+"R", r, c-1));
+          }
+       if(c>1 && r>1){
+        list.addAll(includeDiagonalPaths(s+"d", r-1, c-1));
+      }   
+
+    return list;
+
+}
 
     public static void main(String[] args) {
         // int res=totalWays(3, 3);
@@ -51,6 +71,8 @@ static ArrayList<String>totalPaths(String s, int r,int c){
         // totalPath("", 3, 3);
         ArrayList<String>list=totalPaths("", 3, 3);
         System.out.println(list);
+        ArrayList<String>list2=includeDiagonalPaths("",3,3);
+        System.out.println(list2);
         
     }
 }
