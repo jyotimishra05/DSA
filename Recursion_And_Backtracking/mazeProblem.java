@@ -64,6 +64,24 @@ static ArrayList<String>includeDiagonalPaths(String s, int r,int c){
     return list;
 
 }
+//0 1 2
+static void withPathRestrictions(String p,boolean maze[][], int r ,int c){
+    if(r==maze.length-1 && c==maze[0].length-1){
+        System.out.println(p);
+        return;
+    }
+    //obstacle
+    if(maze[r][c]==false){
+        return;
+    }
+    if(r<maze.length-1){
+        totalPath(p+'D', r+1, c);
+    }
+    if(c<maze[0].length-1){
+        totalPath(p+'R', r, c+1);
+    }
+
+}
 
     public static void main(String[] args) {
         // int res=totalWays(3, 3);
@@ -73,6 +91,11 @@ static ArrayList<String>includeDiagonalPaths(String s, int r,int c){
         System.out.println(list);
         ArrayList<String>list2=includeDiagonalPaths("",3,3);
         System.out.println(list2);
-        
+        boolean maze[][]={
+            {true,true,true},
+            {true,false,true},
+            {true,true,true}
+        };
+        withPathRestrictions("", maze, 0, 0);
     }
 }
