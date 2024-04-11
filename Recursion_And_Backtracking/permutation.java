@@ -48,10 +48,24 @@ public class permutation {
         }
         return c;
     }
+    // public static ArrayList<String> permutationOfStringMethodSecond(ArrayList<String>temp,ArrayList<String>result,char ar[]){
+    //     for(int i=0;i<ar.length;i++){
+    //         temp.add(ar[i]);
+            
+            
+
+    //     }
+        
+    // }
     public static void main(String[] args) {
         // permutationOfString("abc","");
         System.out.println(permutationOfStringCount("abc",""));
         ArrayList<String>list = permutationOfStringInArray("abc","");
         System.out.println(list);
+        // ArrayList<String>words=new ArrayList<>();
+        // String s = "abc";
+        // char ch[]=s.toCharArray();
+        // permutationOfStringMethodSecond(new ArrayList<>(),words,s);
+        // System.out.println(words);
     }
 }

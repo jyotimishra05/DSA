@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PhoneNumber {
     // public static void findCombination(String up,String p){
@@ -52,6 +53,33 @@ public class PhoneNumber {
         ArrayList<String>res=findComb(s,"");
         return res;
     }
+
+
+
+    public static ArrayList <String>totalPossileWords(int arr[],int n ,String p,int j){
+        if(j==arr.length){
+            ArrayList<String>list=new ArrayList<>();
+            list.add(p);
+            return list;
+        }
+        
+         ArrayList<String>outer=new ArrayList<>();
+        String keypad[]={"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        String key= keypad[arr[j]];
+        // System.out.println(key);
+        for(int i=0;i<key.length();i++){
+            outer.addAll(totalPossileWords(arr,n,p+key.charAt(i),j+1));
+        }
+        return outer;
+    }
+
+    static ArrayList <String> possibleWords(int a[], int N)
+    {
+        return totalPossileWords(a,N,"",0);
+    }
+
+
+
     public static void main(String[] args) {
         // findCombination("2","");
         String s="23";
@@ -60,6 +88,11 @@ public class PhoneNumber {
         }
         ArrayList<String>list = findCombinationArrayList(s);
         System.out.println(list);
+        int a[]={2,3};
+        int n=a.length;
+        ArrayList<String>list1=possibleWords(a,n);
+        System.out.println(list1);
+        
     }
 }
 
