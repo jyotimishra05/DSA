@@ -28,19 +28,26 @@ public class minInRotatedSortedArray {
         while (s<=e) {
             int mid= s+(e-s)/2;
             if(arr[s]<=arr[e]){ //sorted
-                count=s;
-                ans = Math.min(ans, arr[s]);
+               
+                if(arr[s]<ans){
+                    count=s;
+                    ans = arr[s];
+                }
                 return count ;
             }
             if(arr[s]<=arr[mid]){
-                count=s;
-                ans = Math.min(arr[s], ans);
+                if(arr[s]<ans){
+                    count=s;
+                    ans = arr[s];
+                }
                
                 s=mid+1;
             }
             else{
-                count=s;
-                ans = Math.min(arr[mid], ans);
+                if(arr[mid]<ans){
+                    count=mid;
+                    ans = arr[s];
+                }
             
                 e=mid-1; 
             }
@@ -49,7 +56,7 @@ public class minInRotatedSortedArray {
         return count;
     }
     public static void main(String[] args) {
-       int nums[] = {3,4,5,1,2};
+       int nums[] = {27, 31 ,43 ,45 ,46 ,5 ,11 ,13, 18 ,19 ,20 };
        System.out.println(findMin(nums));
        int count = countRotation(nums);
        System.out.println(count);
