@@ -44,10 +44,12 @@ public class allocateMinPages {
 
 
     }
+    
     public static void main(String[] args) {
        int nums[] = {7,2,5,10,8};
        int k = 2;
        int ans =splitArrayLargestSum(nums,k);
        System.out.println(ans);
+       
     }
 }
