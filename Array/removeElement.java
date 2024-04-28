@@ -7,8 +7,10 @@ public class removeElement {
             if(arr[i]!=val){
                 arr[count]=arr[i];
                 count++;
-            }
+            }//0,1,3,0,4
         }
         System.out.println(count);
     }
 }
+
+

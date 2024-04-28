@@ -9,6 +9,6 @@ public class removeDuplicatefromSortedArray {
             nums[j]=nums[i];
             }
         }
-        System.out.println(j+1);
+        System.out.println("number of unique elements"+j+1);
     }
 }
