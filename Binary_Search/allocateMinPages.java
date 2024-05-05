@@ -1,8 +1,8 @@
 public class allocateMinPages {
     
     public static int splitArrayLargestSum(int arr[],int k){
-        int s=0;  //if we each book to every single student [7] [2] [5] [10] [8] :take max (max partion)
-        int e=0;  //if we assign every book to single student (min partion)  got the range (s ,e)
+        int s=0;  //if we give each book to every single student [7] [2] [5] [10] [8] :take max (max partion)
+        int e=0;  //if we assign every(all) book to single student (min partion)  got the range (s ,e)
         for(int i=0;i<arr.length;i++){
             s=Math.max(s, arr[i]);
             e=e+arr[i];
