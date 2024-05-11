@@ -132,12 +132,12 @@ public static Node insertAtLast(Node head,int ele){
 public static Node insertAtKth(Node head, int idx ,int ele){
 
         Node newNode = new Node(ele);
-      if(head==null){
-        if(ele==1){
-          head= newNode;
-          return head;
+           if(head==null){
+              if(ele==1){
+               head = newNode;
+               return head;
 
-        }
+              }
         else{
           return head;
         }
